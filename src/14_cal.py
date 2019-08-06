@@ -22,3 +22,33 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+
+def user_calendar():
+
+	print('enter month and year: ')
+	user_input_value = input()
+
+	if user_input_value == '':
+		current_month = calendar.month(2019, 8, w=0, l=0)
+		print(current_month)
+
+	user_input_list = user_input_value.split(' ')
+	
+	if len(user_input_value) == 1 and int(user_input_list[0])<=12:
+		current_month = calendar.month(2019, (int(user_input_list[0])), w=0, l=0)
+		print(current_month)
+
+	if len(user_input_list) == 2 and (int(user_input_list[0])) <=12:
+		current_month = calendar.month((int(user_input_list[1])), (int(user_input_list[0])), w=0, l=0)
+		print(current_month)
+
+	if len(user_input_list) == 2 and (int(user_input_list[1])) <=12:
+		current_month = calendar.month((int(user_input_list[0])), (int(user_input_list[1])), w=0, l=0)
+		print(current_month)
+
+	else:
+		return print('The expected format is : MM, YYYY')
+
+
+user_calendar()
